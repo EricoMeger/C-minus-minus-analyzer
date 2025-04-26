@@ -52,3 +52,19 @@ Regras
 %%
 Código de apoio
 ```
+
+- **Definições:** Declarações de variáveis, imports de bibliotecas, configurações de opções.
+- **Regras:** Expressões regulares associadas a ações de código para reconhecer os tokens.
+- **Código de apoio:** Funções auxiliares ou o main() que chama yylex().
+
+# Referências
+
+- [Manual do Flex (GNU)](https://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/html_mono/flex.html#SEC5)
+- [Flex - Fast Lexical Analyzer Generator (GeeksforGeeks)](https://www.geeksforgeeks.org/flex-fast-lexical-analyzer-generator/)
+- [Introduction of lexical analysis (GeeksforGeeks)](https://www.geeksforgeeks.org/introduction-of-lexical-analysis/)
+- [Working of lexical analyzer in compiler (GeeksforGeeks)](https://www.geeksforgeeks.org/working-of-lexical-analyzer-in-compiler/)
+- [Explicação prática do uso de Lex (IME-USP)](https://www.ime.usp.br/~kon/MAC211/2002/lista/msg00071.html)
+
+# Autor
+
+Projeto desenvolvido por Érico Meger.
