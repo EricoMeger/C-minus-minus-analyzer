@@ -1,21 +1,54 @@
-https://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/html_mono/flex.html#SEC5
-https://www.geeksforgeeks.org/flex-fast-lexical-analyzer-generator/
-https://www.geeksforgeeks.org/introduction-of-lexical-analysis/
-https://www.geeksforgeeks.org/working-of-lexical-analyzer-in-compiler/
-https://www.ime.usp.br/~kon/MAC211/2002/lista/msg00071.html
+# C-- (C-minus-minus) Lexical Analyzer
 
-o input de um arquivo flex consiste de três seções, separadas por uma linha com somente %% nela
+<p>Este projeto é um analisador léxico para uma linguagem fictícia chamada C--, baseada na linguagem C. Foi desenvolvido como parte de um trabalho acadêmico de Linguagens formais e autômatos, utilizando a ferramenta Flex para geração automática do scanner.</p>
+<p>O analisador lê um arquivo fonte, identifica e classifica seus tokens (como palavras-chave, identificadores, operadores, delimitadores, etc.), e reporta possíveis erros léxicos, como identificadores inválidos ou símbolos desconhecidos.</p>
 
+# Como rodar o projeto:
+
+O projeto utiliza um **Makefile** para facilitar a compilação e testes.
+
+#### 1. Compilação
+
+Para compilar o analisador, execute:
+
+```sh
+$ make
 ```
-definições (variaveis, imports, etc.)
-%%
-regras (palavras-chave, coisas q precisam existir na linguagem)
-%%
-codigo para rodar o analisador léxico
+
+#### 2. Rodar testes
+
+Existem testes de exemplo para códigos validos e inválidos localizados em `main/test_cases`.
+- Testar um código válido:
+
+```sh
+$ make test_valid
 ```
 
-%option noyywrap // Faz com que o analisador rode ate o fim do yyin (arq recebido) e retorne automaticamente.
-%option yylineno // Contador de linha próprio do flex
-yytext é uma variável propria do flex que guarda o lexema que acabou de ser reconhecido
+- Testar um código inválido:
 
-falta fazer string coom \n nao ser reconhecida
+
+```sh
+$ make test_invalid
+```
+
+Esses comandos irão executar o analisador `cmm` passando arquivos de teste como entrada padrão.
+
+#### 3. Executar manualmente
+
+Você também pode rodar manualmente:
+
+```sh
+$ ./cmm < caminho/para/seu_codigo.*
+```
+
+# Notas sobre Flex
+
+O arquivo `cmm.lex` segue a estrutura padrão dos arquivos Flex, dividida em três seções separadas por linhas contendo apenas `%%`:
+
+```bash
+Definições
+%%
+Regras
+%%
+Código de apoio
+```

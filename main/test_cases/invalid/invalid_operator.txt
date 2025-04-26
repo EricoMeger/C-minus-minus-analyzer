@@ -2,7 +2,6 @@ int main() {
     int valor = 10;
     char letra = 'b';
     char *palavra = "helloWorld";
-    string teste = "teste\n";
 
     if (5 @ 5) { 
         valor = valor + 1;
