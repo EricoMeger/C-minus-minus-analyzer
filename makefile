@@ -1,5 +1,5 @@
 all: compile
 
 compile:
-	lex cmm.lex
+	lex ./main/cmm.lex
 	g++ lex.yy.c -o cmm
