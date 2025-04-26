@@ -1,0 +1,24 @@
+int main_teste() {
+    int numero = 10;
+    char letra = 'x';
+    char *palavra = "exemplo123";
+
+    if (numero > 5 && letra != 'z') {
+        numero = numero + 1;
+    } else {
+        numero = numero - 1;
+    }
+
+    while (numero < 20) {
+        numero = numero + 2;
+    }
+
+    return 0;
+}
+
+int outroNumero = 5;
+char outraLetra = 'y';
+char *outraPalavra = "abcDEF123";
+if (outroNumero == 5) {
+    outroNumero = outroNumero * 2;
+}

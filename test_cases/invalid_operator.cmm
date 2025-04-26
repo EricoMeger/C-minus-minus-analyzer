@@ -1,0 +1,22 @@
+int main() {
+    int valor = 10;
+    char letra = 'b';
+    char *palavra = "helloWorld";
+    string teste = "teste\n";
+
+    if (5 @ 5) { 
+        valor = valor + 1;
+    } else {
+        valor = valor - 1;
+    }
+
+    while (valor < 50) {
+        valor = valor + 2;
+    }
+
+    return 0;
+}
+
+int x = 5;
+int y = 10;
+z = x + y;
