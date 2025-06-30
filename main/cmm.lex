@@ -45,10 +45,11 @@ IDENTIFIER_CONSTANT [a-zA-Z_][a-zA-Z0-9_]*
 
 "+" {return PLUS;}
 "-" {return MINUS;}
-"*" {return MULTIPLY;}
+"*" {return STAR;}
 "/" {return SLASH;}
 "%" {return MOD;}
 "||" {return OR;}
+"&" {return REFERENCE;}
 "&&" {return AND;}
 "==" {return EQUAL;}
 "!=" {return NOT_EQUAL;}
@@ -63,7 +64,7 @@ IDENTIFIER_CONSTANT [a-zA-Z_][a-zA-Z0-9_]*
 }
 
 {CHARACTER_CONSTANT} {
-    return CHAR;
+    return CHAR_CONSTANT;
 }
 
 {STRING_CONSTANT} {
@@ -80,7 +81,7 @@ IDENTIFIER_CONSTANT [a-zA-Z_][a-zA-Z0-9_]*
 }
 
 {DIGIT}+ {
-    printf("Found numeric constant: %s\n", yytext);
+    return NUMERIC_CONSTANT;
 }
 
 /* {DELIMITERS} {
