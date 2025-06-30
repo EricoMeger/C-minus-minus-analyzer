@@ -23,7 +23,7 @@ void yyerror(const char *s);
 source:
     source declaration
     | source statement
-    | 
+    | //lambda
     ;
 
 // Declaração de funções, variáveis, ponteiros
@@ -120,10 +120,17 @@ expression:
     | NOT expression
     | LPAREN expression RPAREN
     | pointer expression
+    | IDENTIFIER LPAREN argument_list RPAREN // chamada de funcao
     | IDENTIFIER
     | NUMERIC_CONSTANT
     | CHAR_CONSTANT
     | STRING
+    ;
+
+argument_list:
+    expression
+    | argument_list COMMA expression
+    | //lambda
     ;
 
 %%
