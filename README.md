@@ -65,6 +65,23 @@ Código de apoio
 - [Working of lexical analyzer in compiler (GeeksforGeeks)](https://www.geeksforgeeks.org/working-of-lexical-analyzer-in-compiler/)
 - [Explicação prática do uso de Lex (IME-USP)](https://www.ime.usp.br/~kon/MAC211/2002/lista/msg00071.html)
 
+
+--- BISON
+
+https://begriffs.com/posts/2021-11-28-practical-parsing.html
+
+https://www.quut.com/c/ANSI-C-grammar-l.html
+
+https://sayef.tech/post/writing-a-parser-using-flex-and-yaccbison/
+
+https://www.youtube.com/watch?v=avXZE-Kgc-U
+
+https://medium.com/@princedonda4489/building-a-simple-c-compiler-using-lex-96869fbb1e39
+
+https://github.com/ifding/flex-bison/blob/master/bison-learning-notes.md
+
+https://www.gnu.org/software/bison/manual/html_node/Recursion.html
+
 # Autor
 
 Projeto desenvolvido por Érico Meger.
