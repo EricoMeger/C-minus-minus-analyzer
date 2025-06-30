@@ -73,6 +73,10 @@ statement:
     | while_statement
     | for_statement
     | block
+    | BREAK SEMICOLON
+    | CONTINUE SEMICOLON
+    | RETURN expression_statement SEMICOLON
+    | RETURN SEMICOLON
     ;
 
 block:
@@ -136,7 +140,7 @@ int main(int argc, char** argv) {
     int parserResult = yyparse();
 
     if(!parserResult){
-        printf("the program respect the c-- rules!");
+        printf("the program respect the c-- rules!\n");
         return 0;
     } 
 }
