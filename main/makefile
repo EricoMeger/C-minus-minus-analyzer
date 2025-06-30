@@ -15,7 +15,7 @@ test_valid: compile
 	./$(EXEC) ./test_cases/valid/valid_code.cmm
 
 test_invalid: compile
-	./$(EXEC) ./test_cases/invalid/invalid_identifier.cmm
+	./$(EXEC) ./test_cases/invalid/invalid_operator.cmm
 
 clean:
 	rm -f lex.yy.c cmm.tab.c cmm.tab.h $(EXEC)

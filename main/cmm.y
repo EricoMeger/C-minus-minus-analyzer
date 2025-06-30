@@ -119,6 +119,7 @@ expression:
     | expression GREATER_EQUAL expression
     | NOT expression
     | LPAREN expression RPAREN
+    | pointer expression
     | IDENTIFIER
     | NUMERIC_CONSTANT
     | CHAR_CONSTANT
