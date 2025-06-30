@@ -59,7 +59,7 @@ IDENTIFIER_CONSTANT [a-zA-Z_][a-zA-Z0-9_]*
 "!" {return NOT;}
 
 {ASSIGNMENT} {
-    return ASS;
+    return ASSIGN;
 }
 
 {CHARACTER_CONSTANT} {
