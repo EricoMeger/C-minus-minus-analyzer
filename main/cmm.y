@@ -21,7 +21,7 @@ void yyerror(const char *s);
 %%
 
 source:
-    | source declaration
+    source declaration
     | source statement
     | 
     ;
@@ -66,6 +66,7 @@ type_specifier:
     | VOID
     ;
 
+// açoes / instrucoes do codigo; x = 5, if, return, etc.
 statement:
     expression_statement SEMICOLON
     | if_statement
@@ -82,7 +83,7 @@ block:
 if_statement:
     IF LPAREN expression_statement RPAREN statement
     | IF LPAREN expression_statement RPAREN statement ELSE statement
-    | IF LPAREN expression_statement RPAREN statement ELSE if_statement
+    ;
 
 while_statement:
     WHILE LPAREN expression_statement RPAREN statement
