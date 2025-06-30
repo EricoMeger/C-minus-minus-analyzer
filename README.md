@@ -80,6 +80,8 @@ https://medium.com/@princedonda4489/building-a-simple-c-compiler-using-lex-96869
 
 https://github.com/ifding/flex-bison/blob/master/bison-learning-notes.md
 
+https://www.quut.com/c/ANSI-C-grammar-l.html
+
 https://www.gnu.org/software/bison/manual/html_node/Recursion.html
 
 # Autor
