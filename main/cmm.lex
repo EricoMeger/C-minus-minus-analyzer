@@ -1,3 +1,7 @@
+%{
+#include "cmm.tab.h" 
+%}
+
 %option noyywrap
 /* Faz com que o analisador rode ate o fim do yyin (arq recebido) e retorne automaticamente. */ 
 %option yylineno
@@ -16,33 +20,23 @@ IDENTIFIER_CONSTANT [a-zA-Z_][a-zA-Z0-9_]*
 
 %%
 
-/* {KEYWORDS} {
-    printf("Found keyword: %s\n", yytext); /* yytext é uma variável propria do flex que guarda o lexema que acabou de ser reconhecido */
-} */
-
+%x /* Keywords */
 "break" {return BREAK;}
 "continue" {return CONTINUE;}
 "else" {return ELSE;}
 "for" {return FOR;}
 "if" {return IF;}
 "return" {return RETURN;}
-/* "struct" {return STRUCT;} Bison nao precisa aceitar */
 "while" {return WHILE;}
 
-/* {TYPES} {
-    printf("Found type: %s\n", yytext);
-} */
-
+%x /* Types */
 "char" {return CHAR;}
 "int" {return INT;}
 "long" {return LONG;}
 "short" {return SHORT;}
 "void" {return VOID;}
 
-/* {OPERATORS} {
-    printf("Found operator: %s\n", yytext);
-} */
-
+%x /* Operators */
 "+" {return PLUS;}
 "-" {return MINUS;}
 "*" {return STAR;}
@@ -71,11 +65,6 @@ IDENTIFIER_CONSTANT [a-zA-Z_][a-zA-Z0-9_]*
     return STRING;
 }
 
-/* {INVALID_IDENTIFIER} {
-    printf("Error at line %d, Invalid identifier %s.\n", yylineno, yytext);
-    exit(1);
-} */
-
 {IDENTIFIER_CONSTANT} {
     return IDENTIFIER;
 }
@@ -84,10 +73,7 @@ IDENTIFIER_CONSTANT [a-zA-Z_][a-zA-Z0-9_]*
     return NUMERIC_CONSTANT;
 }
 
-/* {DELIMITERS} {
-    printf("Found delimiter: %s\n", yytext);
-} */
-
+%x /* Delimiters */
 "(" {return LPAREN;}
 ")" {return RPAREN;}
 "{" {return LBRACKET;}

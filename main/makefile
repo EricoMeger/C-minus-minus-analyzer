@@ -1,11 +1,21 @@
+EXEC = cmm
+
 all: compile
 
-compile:
-	lex cmm.lex
-	g++ lex.yy.c -o cmm
+compile: lex.yy.c cmm.tab.c
+	g++ lex.yy.c cmm.tab.c -o $(EXEC) -lfl
 
-test_valid:
-	./cmm < ./test_cases/valid/valid_code.cmm
+lex.yy.c: cmm.lex cmm.tab.h
+	flex cmm.lex
 
-test_invalid:
-	./cmm < ./test_cases/invalid/invalid_identifier.cmm
+cmm.tab.c cmm.tab.h: cmm.y
+	bison -d cmm.y
+
+test_valid: compile
+	./$(EXEC) ./test_cases/valid/valid_code.cmm
+
+test_invalid: compile
+	./$(EXEC) ./test_cases/invalid/invalid_identifier.cmm
+
+clean:
+	rm -f lex.yy.c cmm.tab.c cmm.tab.h $(EXEC)

@@ -117,6 +117,8 @@ expression:
     | LPAREN expression RPAREN
     | IDENTIFIER
     | NUMERIC_CONSTANT
+    | CHAR_CONSTANT
+    | STRING
     ;
 
 %%
@@ -140,6 +142,8 @@ int main(int argc, char** argv) {
 }
 
 void yyerror(const char *s) {
-    fprintf(stderr, "syntax error: %s\n", s);
+    extern int yylineno;
+    extern char *yytext;
+    fprintf(stderr, "syntax error at line %d: unexpected token '%s'\n", yylineno, yytext);
     exit(1);
 }
