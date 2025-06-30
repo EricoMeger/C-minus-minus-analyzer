@@ -29,12 +29,20 @@ source:
 // Declaração de funções, variáveis, ponteiros
 declaration:
     type_specifier IDENTIFIER SEMICOLON
+    | type_specifier IDENTIFIER ASSIGN initializer SEMICOLON
+    | type_specifier pointer IDENTIFIER ASSIGN initializer SEMICOLON
     | type_specifier pointer IDENTIFIER SEMICOLON
     | type_specifier IDENTIFIER LPAREN RPAREN SEMICOLON
     | type_specifier IDENTIFIER LPAREN parameter_list RPAREN SEMICOLON
     | type_specifier IDENTIFIER LPAREN RPAREN block
     | type_specifier IDENTIFIER LPAREN parameter_list RPAREN block
     ;
+
+initializer:
+    NUMERIC_CONSTANT
+    | IDENTIFIER
+    | STRING
+    | CHAR_CONSTANT
 
 //declaracao de parametros da funcao, ela pode receber um ou mais parametros
 parameter_list:
@@ -43,6 +51,7 @@ parameter_list:
     | type_specifier pointer IDENTIFIER
     ;
 
+// *, &, *&, **, **&
 pointer:
     STAR
     | REFERENCE
