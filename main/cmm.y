@@ -95,24 +95,29 @@ for_statement:
     ;
 
 expression_statement:
-    IDENTIFIER ASSIGN expression_statement
-    | expression_statement PLUS expression_statement
-    | expression_statement MINUS expression_statement
-    | expression_statement STAR expression_statement
-    | expression_statement SLASH expression_statement
-    | expression_statement MOD expression_statement
-    | expression_statement OR expression_statement
-    | expression_statement AND expression_statement
-    | expression_statement EQUAL expression_statement
-    | expression_statement NOT_EQUAL expression_statement
-    | expression_statement LESS expression_statement
-    | expression_statement LESS_EQUAL expression_statement
-    | expression_statement GREATER expression_statement
-    | expression_statement GREATER_EQUAL expression_statement
-    | NOT expression_statement
-    | LPAREN expression_statement RPAREN
+    expression
+    ;
+
+expression:
+    IDENTIFIER ASSIGN expression
+    | expression PLUS expression
+    | expression MINUS expression
+    | expression STAR expression
+    | expression SLASH expression
+    | expression MOD expression
+    | expression OR expression
+    | expression AND expression
+    | expression EQUAL expression
+    | expression NOT_EQUAL expression
+    | expression LESS expression
+    | expression LESS_EQUAL expression
+    | expression GREATER expression
+    | expression GREATER_EQUAL expression
+    | NOT expression
+    | LPAREN expression RPAREN
     | IDENTIFIER
     | NUMERIC_CONSTANT
+    ;
 
 %%
 
