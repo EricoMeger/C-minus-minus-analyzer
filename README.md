@@ -1,6 +1,6 @@
 # C-- (C-minus-minus) Analyzer
 
-<p>Este projeto é um analisador léxico e sintático para uma linguagem fictícia chamada C--, inspirada na linguagem C. Foi desenvolvido como parte de um trabalho acadêmico de Linguagens Formais e Autômatos, utilizando as ferramentas **Flex** e **Bison**.</p>
+Este projeto é um analisador léxico e sintático para uma linguagem fictícia chamada C--, inspirada na linguagem C. Foi desenvolvido como parte de um trabalho acadêmico de Linguagens Formais e Autômatos, utilizando as ferramentas **Flex** e **Bison**.
 <p>O analisador lê um arquivo-fonte, identifica e classifica tokens (palavras-chave, identificadores, operadores, delimitadores, etc.), e valida se o código respeita as regras sintáticas do C--. Além disso, reporta erros léxicos (como símbolos inválidos) e erros sintáticos com indicação de linha.</p>
 
 # Como rodar o projeto:
