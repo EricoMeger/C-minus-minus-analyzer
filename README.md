@@ -91,9 +91,7 @@ DECLARATION → TYPE_SPECIFIER identifier ;
             | TYPE_SPECIFIER identifier = INITIALIZER ;
             | TYPE_SPECIFIER POINTER identifier = INITIALIZER ;
             | TYPE_SPECIFIER POINTER identifier ;
-            | TYPE_SPECIFIER identifier ( ) ;
             | TYPE_SPECIFIER identifier ( PARAMETER_LIST ) ;
-            | TYPE_SPECIFIER identifier ( ) BLOCK
             | TYPE_SPECIFIER identifier ( PARAMETER_LIST ) BLOCK
 
 INITIALIZER → numeric_constant

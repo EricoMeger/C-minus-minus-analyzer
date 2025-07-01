@@ -32,10 +32,8 @@ declaration:
     | type_specifier IDENTIFIER ASSIGN initializer SEMICOLON
     | type_specifier pointer IDENTIFIER ASSIGN initializer SEMICOLON
     | type_specifier pointer IDENTIFIER SEMICOLON
-    | type_specifier IDENTIFIER LPAREN RPAREN SEMICOLON
-    | type_specifier IDENTIFIER LPAREN parameter_list RPAREN SEMICOLON
-    | type_specifier IDENTIFIER LPAREN RPAREN block
-    | type_specifier IDENTIFIER LPAREN parameter_list RPAREN block
+    | type_specifier IDENTIFIER LPAREN parameter_list RPAREN SEMICOLON //funcoes prototipo
+    | type_specifier IDENTIFIER LPAREN parameter_list RPAREN block //funcao convencional
     ;
 
 initializer:
@@ -49,6 +47,7 @@ parameter_list:
     | parameter_list COMMA type_specifier IDENTIFIER
     | type_specifier IDENTIFIER
     | type_specifier pointer IDENTIFIER
+    | //lambda
     ;
 
 // *, &, *&, **, **&
