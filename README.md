@@ -78,7 +78,7 @@ O arquivo cmm.y define:
   
 Se a entrada não respeitar a gramática, o Bison gera uma mensagem de erro sintático informando a linha e o caractere.
 
-# Gramática
+# Gramática da linguagem C--
 
 ```
 S → SOURCE
