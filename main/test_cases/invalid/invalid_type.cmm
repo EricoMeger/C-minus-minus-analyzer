@@ -1,8 +1,8 @@
-int 1main() {
+int main() {
     int valor = 10;
     char letra = 'b';
     char *palavra = "helloWorld";
-    string teste = "teste\n";
+    string teste = "teste\n"; //string não é um tipo
 
     if (5 == 5) { 
         valor = valor + 1;

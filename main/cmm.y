@@ -44,7 +44,7 @@ initializer:
 
 //declaracao de parametros da funcao, ela pode receber um ou mais parametros
 parameter_list:
-    | parameter_list COMMA type_specifier IDENTIFIER
+    parameter_list COMMA type_specifier IDENTIFIER
     | type_specifier IDENTIFIER
     | type_specifier pointer IDENTIFIER
     | //lambda
