@@ -80,7 +80,87 @@ Se a entrada não respeitar a gramática, o Bison gera uma mensagem de erro sint
 
 # Gramática
 
-TODO
+```
+S → SOURCE
+
+SOURCE → SOURCE DECLARATION 
+       | SOURCE STATEMENT 
+       | λ
+
+DECLARATION → TYPE_SPECIFIER identifier ;
+            | TYPE_SPECIFIER identifier = INITIALIZER ;
+            | TYPE_SPECIFIER POINTER identifier = INITIALIZER ;
+            | TYPE_SPECIFIER POINTER identifier ;
+            | TYPE_SPECIFIER identifier ( ) ;
+            | TYPE_SPECIFIER identifier ( PARAMETER_LIST ) ;
+            | TYPE_SPECIFIER identifier ( ) BLOCK
+            | TYPE_SPECIFIER identifier ( PARAMETER_LIST ) BLOCK
+
+INITIALIZER → numeric_constant
+            | identifier
+            | string
+            | char_constant
+
+PARAMETER_LIST → λ
+               | PARAMETER_LIST , TYPE_SPECIFIER identifier
+               | TYPE_SPECIFIER identifier
+               | TYPE_SPECIFIER POINTER identifier
+
+POINTER → *
+        | &
+        | * POINTER
+
+TYPE_SPECIFIER → char | int | long | short | void
+
+STATEMENT → EXPRESSION_STATEMENT ;
+          | IF_STATEMENT
+          | WHILE_STATEMENT
+          | FOR_STATEMENT
+          | BLOCK
+          | break ;
+          | continue ;
+          | return EXPRESSION_STATEMENT ;
+          | return ;
+
+BLOCK → { }
+      | { SOURCE }
+
+IF_STATEMENT → if ( EXPRESSION_STATEMENT ) STATEMENT
+             | if ( EXPRESSION_STATEMENT ) STATEMENT else STATEMENT
+
+WHILE_STATEMENT → while ( EXPRESSION_STATEMENT ) STATEMENT
+
+FOR_STATEMENT → for ( EXPRESSION_STATEMENT ; EXPRESSION_STATEMENT ; EXPRESSION_STATEMENT ) STATEMENT
+
+EXPRESSION_STATEMENT → EXPRESSION
+
+EXPRESSION → identifier = EXPRESSION
+           | EXPRESSION + EXPRESSION
+           | EXPRESSION - EXPRESSION
+           | EXPRESSION * EXPRESSION
+           | EXPRESSION / EXPRESSION
+           | EXPRESSION % EXPRESSION
+           | EXPRESSION || EXPRESSION
+           | EXPRESSION && EXPRESSION
+           | EXPRESSION == EXPRESSION
+           | EXPRESSION != EXPRESSION
+           | EXPRESSION < EXPRESSION
+           | EXPRESSION <= EXPRESSION
+           | EXPRESSION > EXPRESSION
+           | EXPRESSION >= EXPRESSION
+           | ! EXPRESSION
+           | ( EXPRESSION )
+           | POINTER EXPRESSION
+           | identifier ( ARGUMENT_LIST )
+           | identifier
+           | numeric_constant
+           | char_constant
+           | string
+
+ARGUMENT_LIST → EXPRESSION
+              | ARGUMENT_LIST , EXPRESSION
+              | λ
+```
 
 # Referências
 
